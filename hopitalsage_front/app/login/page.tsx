@@ -25,28 +25,26 @@ export default function LoginPage() {
 
       const { token, refresh, user } = response.data;
 
-      // Stockage
       localStorage.setItem('accessToken', token);
       localStorage.setItem('refresh', refresh);
       localStorage.setItem('user', JSON.stringify(user));
       Cookies.set('token', token);
 
-      // Redirection selon le rôle
       switch (user.role) {
         case 'superuser':
-            router.push('/dashboard/superadmin');
-            break;
+          router.push('/dashboard/superadmin');
+          break;
         case 'directeur':
-            router.push('/dashboard/directeur');
-            break;
+          router.push('/dashboard/directeur');
+          break;
         case 'admin':
-            router.push('/dashboard/school');
-            break;
+          router.push('/dashboard/school');
+          break;
         case 'comptable':
-            router.push('/dashboard/comptable');
-            break;
+          router.push('/dashboard/comptable');
+          break;
         default:
-            router.push('/');
+          router.push('/');
       }
     } catch (err: any) {
       setError('Identifiants invalides');
@@ -70,7 +68,7 @@ export default function LoginPage() {
           placeholder="Nom d'utilisateur"
           value={username}
           onChange={(e) => setUsername(e.target.value)}
-          className="w-full px-4 py-2 border border-blue-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-400"
+          className="w-full px-4 py-2 text-blue-600 placeholder:text-blue-300 text-lg border border-blue-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-400"
           required
         />
 
@@ -79,7 +77,7 @@ export default function LoginPage() {
           placeholder="Mot de passe"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
-          className="w-full px-4 py-2 border border-blue-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-400"
+          className="w-full px-4 py-2 text-blue-600 placeholder:text-blue-300 text-lg border border-blue-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-400"
           required
         />
 

@@ -15,7 +15,8 @@ SECRET_KEY = os.environ.get("SECRET_KEY")
 DEBUG = True
 #logging.basicConfig(level=logging.DEBUG)
 
-ALLOWED_HOSTS =['https://starbit.onrender.com']
+ALLOWED_HOSTS = ['starbit.onrender.com', 'localhost', '127.0.0.1']
+
 
 
 # Application definition

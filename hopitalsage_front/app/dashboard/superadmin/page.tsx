@@ -49,7 +49,9 @@ export default function SuperuserDashboardPage() {
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.6 }}
           className="h-12 w-12 border-4 border-blue-500 border-t-transparent rounded-full animate-spin"
-        />
+        >
+        </motion.div>
+
 
       </div>
     );

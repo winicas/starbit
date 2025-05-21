@@ -30,7 +30,7 @@ export default function SuperuserDashboardPage() {
       }
 
       try {
-        const response = await axios.get('http://localhost:8000/api/admin-dashboard/', {
+        const response = await axios.get('${process.env.NEXT_PUBLIC_API_URL}/api/admin-dashboard/', {
           headers: { Authorization: `Bearer ${token}` },
         });
         setData(response.data);

@@ -16,7 +16,7 @@ export default function CreateClientPage() {
     if (!token) return alert('Veuillez vous connecter.');
 
     try {
-      const res = await fetch('http://localhost:8000/api/clients/', {
+      const res = await fetch('${process.env.NEXT_PUBLIC_API_URL}/api/clients/', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

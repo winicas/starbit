@@ -37,7 +37,7 @@ export default function CreateDirecteurPage() {
     formData.append('role', 'directeur');
 
     try {
-      const res = await axios.post('http://localhost:8000/api/create-directeur/', formData, {
+      const res = await axios.post('${process.env.NEXT_PUBLIC_API_URL}/api/create-directeur/', formData, {
         headers: {
           Authorization: `Bearer ${token}`,
           'Content-Type': 'multipart/form-data',

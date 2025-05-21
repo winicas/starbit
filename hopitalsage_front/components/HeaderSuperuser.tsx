@@ -21,7 +21,7 @@ export default function HeaderSuperuser() {
       if (!token) return;
 
       try {
-        const res = await fetch('http://localhost:8000/api/me/', {
+        const res = await fetch('${process.env.NEXT_PUBLIC_API_URL}/api/me/', {
           headers: { Authorization: `Bearer ${token}` },
         });
 

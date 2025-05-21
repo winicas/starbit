@@ -3,10 +3,9 @@ services:
     name: starbit.onrender.com
     env: python
     buildCommand: |
+      pip install --upgrade pip
       pip install -r requirements.txt
-    startCommand: |
-  
-      python manage.py makemigrations
-      python manage.py migrate
+    startCommand: >
+      python manage.py migrate &&
+      python manage.py collectstatic --noinput &&
       gunicorn logistic_project.wsgi:application
-      

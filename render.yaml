@@ -23,8 +23,3 @@ services:
         generateValue: true
       - key: DEBUG
         value: "False"
-
-databases:
-  - name: starbit-db
-    region: oregon
-    plan: free

@@ -4,6 +4,8 @@ from .models import Client, Conteneur, ContratGroupage, Produit, Paiement,User
 
 from django.contrib.auth import authenticate
 
+import logging
+logger = logging.getLogger(__name__)
 
 class LoginSerializer(serializers.Serializer):
     username = serializers.CharField()
@@ -12,9 +14,9 @@ class LoginSerializer(serializers.Serializer):
     def validate(self, data):
         user = authenticate(**data)
         if user and user.is_active:
-            return user
+            return {'user': user}
+        logger.warning(f"Échec login pour {data.get('username')}")
         raise serializers.ValidationError("Identifiants incorrects")
-
 
 
 from rest_framework import serializers

@@ -15,7 +15,8 @@ class LoginAPIView(APIView):
     def post(self, request, *args, **kwargs):
         serializer = LoginSerializer(data=request.data)
         if serializer.is_valid():
-            user = serializer.validated_data
+            user = serializer.validated_data['user']
+
 
             # Générer les tokens JWT
             refresh = RefreshToken.for_user(user)

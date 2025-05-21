@@ -30,7 +30,7 @@ export default function SuperuserDashboardPage() {
       }
 
       try {
-        const response = await axios.get('${process.env.NEXT_PUBLIC_API_URL}/api/admin-dashboard/', {
+        const response = await axios.get('https://starbit.onrender.com/api/admin-dashboard/', {
           headers: { Authorization: `Bearer ${token}` },
         });
         setData(response.data);

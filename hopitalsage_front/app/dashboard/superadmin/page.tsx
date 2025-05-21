@@ -13,6 +13,9 @@ interface DashboardData {
   paiements_en_attente: number;
 }
 
+// Corriger ici : version typée de motion.div
+const MotionDiv = motion.div as React.ComponentType<React.HTMLAttributes<HTMLDivElement> & any>;
+
 export default function SuperuserDashboardPage() {
   const [data, setData] = useState<DashboardData | null>(null);
   const [loading, setLoading] = useState(true);
@@ -44,16 +47,12 @@ export default function SuperuserDashboardPage() {
   if (loading) {
     return (
       <div className="flex justify-center items-center h-screen">
-        <motion.div
+        <MotionDiv
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.6 }}
           className="h-12 w-12 border-4 border-blue-500 border-t-transparent rounded-full animate-spin"
-          {...({} as React.HTMLAttributes<HTMLDivElement>)}
         />
-
-
-
       </div>
     );
   }

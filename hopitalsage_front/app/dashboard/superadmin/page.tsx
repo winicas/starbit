@@ -45,11 +45,12 @@ export default function SuperuserDashboardPage() {
     return (
       <div className="flex justify-center items-center h-screen">
         <motion.div
-          initial={{ opacity: 0, scale: 0.6 }}
+          initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.6 }}
           className="h-12 w-12 border-4 border-blue-500 border-t-transparent rounded-full animate-spin"
         />
+
       </div>
     );
   }

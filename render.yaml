@@ -1,16 +1,11 @@
 services:
   - type: web
-    name: starbit-backend
+    name: starbit.onrender.com
     env: python
-    region: oregon
-    plan: free
     buildCommand: |
       pip install -r requirements.txt
-      python manage.py collectstatic --noinput
+    startCommand: |
       python manage.py makemigrations
       python manage.py migrate
-    startCommand: gunicorn logistic_project.wsgi:application
-    runtime: python
-    branch: main
-    autoDeploy: true
-   
+      gunicorn Gf_scool.wsgi:application
+      

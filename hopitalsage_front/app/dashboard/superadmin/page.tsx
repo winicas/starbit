@@ -83,7 +83,7 @@ export default function SuperuserDashboardPage() {
 
 function Card({ title, value }: { title: string; value: number | string }) {
   return (
-    <motion.div
+    <MotionDiv
       initial={{ opacity: 0, y: 10 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.3 }}
@@ -91,6 +91,7 @@ function Card({ title, value }: { title: string; value: number | string }) {
     >
       <h5 className="text-lg font-semibold text-gray-700 dark:text-gray-300">{title}</h5>
       <p className="text-3xl font-bold text-blue-500 mt-2">{value}</p>
-    </motion.div>
+    </MotionDiv>
   );
 }
+

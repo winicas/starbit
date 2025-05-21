@@ -12,8 +12,8 @@ import logging
 #SECRET_KEY = 'django-insecure-2ac27buj@6uo$j=u)8%-)8&%cs%y0xjn(25!k5e_-wl%1ewst2'
 SECRET_KEY = os.environ.get("SECRET_KEY")
 # SECURITY WARNING: don't run with debug turned on in production!
-#DEBUG = True
-logging.basicConfig(level=logging.DEBUG)
+DEBUG = True
+#logging.basicConfig(level=logging.DEBUG)
 
 ALLOWED_HOSTS =['https://starbit.onrender.com']
 

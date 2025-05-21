@@ -1,0 +1,22 @@
+# Ignore l'environnement virtuel local
+venv/
+
+# Fichiers Python inutiles
+__pycache__/
+*.py[cod]
+*.sqlite3
+
+# Fichiers d'environnement
+.env
+
+# Fichiers de logs ou temporaires
+*.log
+*.pot
+*.pyc
+.DS_Store
+
+# Staticfiles collectés (si applicable)
+staticfiles/
+
+# Base de données locale (optionnel)
+db.sqlite3
